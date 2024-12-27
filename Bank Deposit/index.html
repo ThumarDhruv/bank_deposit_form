@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Deposit</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin:40px;
+        }
+        h2{
+            text-align: center;
+        }
+        form{
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid whitesmoke;
+            background-color: white;
+        }
+        input, button{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+
+        }
+        
+        .outout {
+            margin-top: 20px;
+            padding: 10px;
+           
+        }
+        .output div{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bank Deposit Calculator</h2>
+        <form id="depositForm" onsubmit="calculateDeposit(event)">
+            <div class="form-group">
+                <label for="customerId">Customer ID (4 digits):</label>
+                <input type="text" id="customerId" pattern="[0-9]{4}" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="principal">Principal Amount:</label>
+                <input type="number" id="principal" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="rate">Interest Rate (%):</label>
+                <input type="number" id="rate" min="0" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="years">Number of Years:</label>
+                <input type="number" id="years" min="1" max="10" required>
+            </div>
+            <button type="submit">Calculate</button>
+        </form>
+
+        <div id="result" class="result">
+            <h3>Deposit Details</h3>
+            <p>Customer ID: <span id="displayCustomerId"></span></p>
+            <p>Name: <span id="displayName"></span></p>
+            <p>Principal Amount: <span id="displayPrincipal"></span></p>
+            <p>Interest Amount: <span id="displayInterest"></span></p>
+            <p>Maturity Amount: <span id="displayMaturity"></span></p>
+            <p>Tax Amount: <span id="displayTax"></span></p>
+            <p>Total Amount: <span id="displayTotal"></span></p>
+        </div>
+    </div>
+<script src="bank.js"></script>
+
+    
+</body>
+</html>
